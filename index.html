@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+<title>Sourabh ❤️ Aakansha</title>
+<meta name="description" content="A love story, written in starlight — Sourabh & Aakansha" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💗</text></svg>" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Great+Vibes&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Ambient canvas layers: night sky, stars, falling hearts -->
+<canvas id="sky-canvas" aria-hidden="true"></canvas>
+<canvas id="fx-canvas" aria-hidden="true"></canvas>
+
+<!-- Music control -->
+<audio id="bg-music" loop preload="none">
+  <source src="assets/music.mp3" type="audio/mpeg" />
+</audio>
+<button id="music-toggle" class="glass-pill music-btn" aria-label="Toggle background music" aria-pressed="false">
+  <span class="note-icon" aria-hidden="true">♪</span>
+  <span class="music-label">Music</span>
+</button>
+
+<!-- Scroll progress heartbeat line -->
+<div class="progress-track" aria-hidden="true">
+  <div class="progress-fill" id="progress-fill"></div>
+</div>
+
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section id="hero" class="section hero">
+    <p class="eyebrow reveal">a love story, written in starlight</p>
+
+    <h1 class="hero-title reveal">
+      <span class="name">Sourabh</span>
+      <span class="heartbeat-heart" aria-hidden="true">
+        <svg viewBox="0 0 32 29" class="heart-svg"><path d="M16 28.5S1 18.7 1 8.9C1 3.9 5 0 9.7 0c2.9 0 5.5 1.5 6.3 4 0.8-2.5 3.4-4 6.3-4C27 0 31 3.9 31 8.9 31 18.7 16 28.5 16 28.5z"/></svg>
+      </span>
+      <span class="name">Aakansha</span>
+    </h1>
+
+    <p class="hero-sub reveal">Two names. One heartbeat. An entire universe of stars in between.</p>
+
+    <button class="scroll-cue reveal" id="scroll-cue" aria-label="Scroll to read the letter">
+      <span>unfold our story</span>
+      <span class="chevron">⌄</span>
+    </button>
+  </section>
+
+  <!-- ============ LOVE LETTER ============ -->
+  <section id="letter" class="section letter-section">
+    <div class="glass-card letter-card reveal">
+      <span class="corner-star">✦</span>
+      <p class="section-eyebrow">a letter, for you</p>
+      <div class="letter-body">
+        <p id="typewriter-text" class="typewriter" aria-live="polite"></p>
+        <span class="caret" id="caret" aria-hidden="true"></span>
+      </div>
+      <p class="letter-sign">— forever yours, Sourabh</p>
+    </div>
+  </section>
+
+  <!-- ============ WHY I LOVE YOU ============ -->
+  <section id="reasons" class="section reasons-section">
+    <p class="section-eyebrow center reveal">small reasons, infinite love</p>
+    <h2 class="section-title center reveal">Every Little Thing About You</h2>
+
+    <div class="reasons-grid">
+      <article class="glass-card reason-card reveal">
+        <span class="reason-icon">✦</span>
+        <h3>Your Laugh</h3>
+        <p>It turns ordinary evenings into the best part of my day, every single time.</p>
+      </article>
+      <article class="glass-card reason-card reveal">
+        <span class="reason-icon">✧</span>
+        <h3>Your Calm</h3>
+        <p>You steady every storm in my head just by being on the other end of the phone.</p>
+      </article>
+      <article class="glass-card reason-card reveal">
+        <span class="reason-icon">✦</span>
+        <h3>Your Warmth</h3>
+        <p>Somehow you make distance feel small and every "I miss you" feel like home.</p>
+      </article>
+      <article class="glass-card reason-card reveal">
+        <span class="reason-icon">✧</span>
+        <h3>Your Dreams</h3>
+        <p>Watching you chase them is my favorite kind of front-row seat.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ PROPOSAL LEAD-IN ============ -->
+  <section id="proposal-lead" class="section proposal-lead">
+    <div class="glass-card proposal-card reveal">
+      <p class="section-eyebrow center">one more thing</p>
+      <h2 class="section-title center">I've Been Meaning to Ask You Something</h2>
+      <p class="proposal-copy center">It's a small question. It carries every star on this page.</p>
+      <button id="ask-btn" class="cta-button">
+        <span>Ask Me</span>
+        <span class="cta-heart">♥</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ============ FINAL SCREEN ============ -->
+  <section id="final" class="section final-section">
+    <div id="question-view" class="final-inner">
+      <p class="eyebrow reveal">for Aakansha</p>
+      <h2 class="final-question reveal">Will You Stay With Me<br/>Forever?</h2>
+      <div class="answer-row reveal">
+        <button id="yes-btn" class="cta-button yes-button">Yes, Always</button>
+        <button id="no-btn" class="ghost-button">Not Yet</button>
+      </div>
+      <p class="hint reveal">(go on, try clicking "Not Yet")</p>
+    </div>
+
+    <div id="answer-view" class="final-inner hidden">
+      <p class="eyebrow">she said</p>
+      <h2 class="final-answer">Yes, Forever. 💍</h2>
+      <p class="final-answer-sub">Every star above just learned your name.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>Made with <span aria-hidden="true">♥</span> by Sourabh, for Aakansha.</p>
+  </footer>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
